@@ -1,4 +1,5 @@
-import catchAsyne from '../app/utils/catchAsyne';
+
+import catchAsyne from '../../app/utils/catchAsyne';
 import { mobleService } from './moble.service';
 
 const createMoble = catchAsyne(async (req, res) => {

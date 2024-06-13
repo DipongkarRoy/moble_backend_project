@@ -1,4 +1,5 @@
-import { queryBuilder } from '../app/builder/queryBuilder';
+
+import { queryBuilder } from '../../app/builder/queryBuilder';
 import { searchAbleFields } from './moble.constant';
 import { TMoble } from './moble.interface';
 import { MobleModel } from './moble.model';

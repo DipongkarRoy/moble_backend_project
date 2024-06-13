@@ -3,21 +3,22 @@ const app = express();
 import cors from 'cors';
 import router from './app/routes/Router';
 import globalError from './app/utils/globalError';
-
+import { authRouter } from './module/auth/auth.route';
 
 app.use(cors());
 app.use(express.json());
 
-app.use('/api/v1' ,router)
+app.use('/api/v1', router);
+app.use('/auth', authRouter);
 
-app.get('/', async (req: Request, res: Response, ) => {
+app.get('/', async (req: Request, res: Response) => {
   try {
     res.status(200).json({
       success: true,
       massage: 'backend setup project server running',
     });
   } catch (error) {
-   console.log(error);
+    console.log(error);
   }
 });
 app.all('*', (req: Request, res: Response) => {
@@ -29,4 +30,4 @@ app.all('*', (req: Request, res: Response) => {
 
 app.use(globalError);
 
- export default app;
+export default app;
